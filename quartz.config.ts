@@ -5,7 +5,7 @@ import * as Plugin from "./quartz/plugins"
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "Mind Map de Magnetobiología - Kiernan Preve",
-    locale: "es",
+    locale: "es-ES",
     // mientras probás en GitHub Pages (project page):
     // baseUrl = "kierprev.github.io/<NOMBRE-DEL-REPO>"
     // cuando pases a subdominio:
