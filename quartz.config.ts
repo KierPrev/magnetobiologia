@@ -1,44 +1,36 @@
-// .github/quartz/quartz.config.ts
-import { QuartzConfig } from "./quartz/cfg"
-import * as Plugin from "./quartz/plugins"
-
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Mind Map de Magnetobiología - Kiernan Preve",
-    locale: "es-ES",
-    // mientras probás en GitHub Pages (project page):
-    // baseUrl = "kierprev.github.io/<NOMBRE-DEL-REPO>"
-    // cuando pases a subdominio:
-    // baseUrl = "notes.kier.ar"
-    baseUrl: "kierprev.github.io/magnetobiologia"
-  },
+    pageTitle: "Mapa Mental de Magnetobiología - Kiernan Preve",
+    // Change to your desired site title
+    ...
+    baseUrl: "kierprev.github.io/magnetobiologia",
+    // Change to your site URL without https://.
+    // This is your own domain,
+    // or "<github-user-name>.github.io/<repository-name>" when using GitHub Pages.
+    // See below for details
+    ...
+    defaultDateType: "modified",
+    // Change to tell Quartz what date to display on notes
+    // Valid options:
+    // "created", use when the note was created.
+    // "modified", use when the note was last modified.
+    // "published", use when the note was published.
+    // See Quartz docs for details.
+    ...
+    }
+  }
   plugins: {
     transformers: [
-      Plugin.FrontMatter(),
-      Plugin.GitHubFlavoredMarkdown(),
-      Plugin.ObsidianFlavoredMarkdown(),
-      Plugin.Description(),
-      Plugin.CrawlLinks(),
-      Plugin.CreatedModifiedDate(),
-      Plugin.SyntaxHighlighting(),
-      Plugin.TableOfContents(),
-      Plugin.Citations(),
-    ],
-    filters: [
-      Plugin.RemoveDrafts(),
-      // Si querés que SOLO publiquen notas con `publish: true`, descomentá:
-      // Plugin.ExplicitPublish(),
-    ],
-    emitters: [
-      Plugin.ContentPage(),
-      Plugin.FolderPage(),
-      Plugin.TagPage(),
-      Plugin.ContentIndex({ enableSiteMap: true, enableRSS: true }),
-      Plugin.Assets(),
-      Plugin.Static(),
-      Plugin.NotFoundPage(),
-    ],
-  },
+      ...
+      Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
+      // Sets how Quartz should resolve links between notes.
+      // Should match the settings you use in Obsidian.
+      // Valid options:
+      // "shortest"
+      // "relative"
+      // "absolute"
+      ...
+    ]
+    ...
+  }
 }
-
-export default config
