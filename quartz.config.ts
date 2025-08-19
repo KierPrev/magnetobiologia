@@ -1,38 +1,44 @@
-name: Build & Deploy main site + Quartz /magnetobiologia
-on:
-  push:
-    branches: [main]
-permissions: { contents: read, pages: write, id-token: write }
-concurrency: { group: "pages", cancel-in-progress: false }
-jobs:
-  build:
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v4
-      - name: Checkout Quartz repo
-        uses: actions/checkout@v4
-        with:
-          repository: kierprev/magnetobiologia
-          ref: v4
-          path: quartz
-      - uses: actions/setup-node@v4
-        with: { node-version: 22 }
-      - name: Build Quartz
-        run: |
-          cd quartz
-          npm ci
-          npx quartz build
-          cd ..
-      - name: Copy into /magnetobiologia
-        run: |
-          rm -rf magnetobiologia
-          mkdir -p magnetobiologia
-          cp -r quartz/public/* magnetobiologia/
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with: { path: . }
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/deploy-pages@v4
+// .github/quartz/quartz.config.ts
+import { QuartzConfig } from "./quartz/cfg"
+import * as Plugin from "./quartz/plugins"
+
+const config: QuartzConfig = {
+  configuration: {
+    pageTitle: "Kier · Notas",
+    locale: "es-AR",
+    // mientras probás en GitHub Pages (project page):
+    // baseUrl = "kierprev.github.io/<NOMBRE-DEL-REPO>"
+    // cuando pases a subdominio:
+    // baseUrl = "notes.kier.ar"
+    baseUrl: "kierprev.github.io/magnetobiologia"
+  },
+  plugins: {
+    transformers: [
+      Plugin.FrontMatter(),
+      Plugin.GitHubFlavoredMarkdown(),
+      Plugin.ObsidianFlavoredMarkdown(),
+      Plugin.Description(),
+      Plugin.CrawlLinks(),
+      Plugin.CreatedModifiedDate(),
+      Plugin.SyntaxHighlighting(),
+      Plugin.TableOfContents(),
+      Plugin.Citations(),
+    ],
+    filters: [
+      Plugin.RemoveDrafts(),
+      // Si querés que SOLO publiquen notas con `publish: true`, descomentá:
+      // Plugin.ExplicitPublish(),
+    ],
+    emitters: [
+      Plugin.ContentPage(),
+      Plugin.FolderPage(),
+      Plugin.TagPage(),
+      Plugin.ContentIndex({ enableSiteMap: true, enableRSS: true }),
+      Plugin.Assets(),
+      Plugin.Static(),
+      Plugin.NotFoundPage(),
+    ],
+  },
+}
+
+export default config
