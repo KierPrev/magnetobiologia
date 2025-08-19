@@ -15,7 +15,7 @@ const config: QuartzConfig = {
     analytics: {
       provider: "plausible",
     },
-    locale: "es",
+    locale: "es-ES",
     baseUrl: "kierprev.github.io/magnetobiologia",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
