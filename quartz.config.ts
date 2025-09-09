@@ -91,7 +91,7 @@ const config: QuartzConfig = {
         csl: "ieee",          // o "ieee" (numérico)
         linkCitations: true,
         suppressBibliography: false
-      })
+      }),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
       // Comment out CustomOgImages to speed up build time
