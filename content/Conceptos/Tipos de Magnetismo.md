@@ -1,8 +1,9 @@
 ---
-{"publish":true,"created":"2025-09-04T09:20:05.338-03:00","modified":"2025-09-09T09:31:04.412-03:00","cssclasses":""}
+{"publish":true,"created":"2025-09-04T09:20:05.338-03:00","modified":"2025-09-09T10:54:12.128-03:00","cssclasses":""}
 ---
 
-En los materiales, podemos encontrar diferentes tipos de magnetismo[@ahmedExploringMagneticBehavior2024]
+En los materiales, podemos encontrar diferentes tipos de magnetismo[@ahmedExploringMagneticBehavior2024].
+[[Mecanismos/Origen Atómico del Magnetismo]]
 
 - **Ferromagnetismo:**  
     Los espines atómicos se alinean todos en la misma dirección de manera espontánea → generan un campo magnético fuerte (ejemplo: hierro, níquel, cobalto).
