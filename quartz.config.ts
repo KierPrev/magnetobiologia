@@ -86,6 +86,12 @@ const config: QuartzConfig = {
       }),
       Plugin.Assets(),
       Plugin.Static(),
+      Plugin.Citations({
+        bibliographyFile: "./content/bib.bib",
+        csl: "ieee",          // o "ieee" (numérico)
+        linkCitations: true,
+        suppressBibliography: false
+      })
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
       // Comment out CustomOgImages to speed up build time
