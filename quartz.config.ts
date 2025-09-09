@@ -55,6 +55,12 @@ const config: QuartzConfig = {
   },
   plugins: {
     transformers: [
+      Plugin.Citations({
+        bibliographyFile: "./content/bib.bib",
+        csl: "nature",            // o "vancouver" para [1]
+        linkCitations: true,
+        suppressBibliography: false,
+      }),
       Plugin.FrontMatter(),
       Plugin.CreatedModifiedDate({
         priority: ["frontmatter", "git", "filesystem"],
