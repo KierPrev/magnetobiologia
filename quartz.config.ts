@@ -55,12 +55,7 @@ const config: QuartzConfig = {
   },
   plugins: {
     transformers: [
-      Plugin.Citations({
-        bibliographyFile: "./content/bib.bib",
-        csl: "https://raw.githubusercontent.com/citation-style-language/styles/master/nature.csl",
-        lang: "https://raw.githubusercontent.com/citation-style-language/locales/master/locales-es-ES.xml",
-        linkCitations: true,
-      }),
+      
       Plugin.FrontMatter(),
       Plugin.CreatedModifiedDate({
         priority: ["frontmatter", "git", "filesystem"],
