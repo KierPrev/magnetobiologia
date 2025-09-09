@@ -57,7 +57,7 @@ const config: QuartzConfig = {
     transformers: [
       Plugin.Citations({
         bibliographyFile: "./content/bib.bib",
-        csl: "nature",            // o "vancouver" para [1]
+        csl: "ieee",            // o "vancouver" para [1]
         linkCitations: true,
         suppressBibliography: false,
       }),
