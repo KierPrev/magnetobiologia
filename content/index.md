@@ -1,5 +1,5 @@
 ---
-{"publish":true,"title":"Mapa Mental de Magnetobiología","description":"Portal principal — conceptos base, rutas sugeridas y enlaces rápidos.","created":"2025-08-18T21:59:55.520-03:00","modified":"2025-08-18T22:13:20.032-03:00","tags":["magnetobiología","mapa","notas"],"cssclasses":""}
+{"publish":true,"title":"Mapa Mental de Magnetobiología","description":"Portal principal — conceptos base, rutas sugeridas y enlaces rápidos.","created":"2025-09-02T09:09:09.371-03:00","modified":"2025-08-18T22:13:20.000-03:00","tags":["magnetobiología","mapa","notas"],"cssclasses":""}
 ---
 
 

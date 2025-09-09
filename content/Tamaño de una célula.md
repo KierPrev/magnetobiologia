@@ -1,5 +1,5 @@
 ---
-{"publish":true,"created":"2025-08-18T19:33:19.528-03:00","modified":"2025-08-18T20:43:13.352-03:00","cssclasses":""}
+{"publish":true,"created":"2025-09-02T09:09:09.371-03:00","modified":"2025-09-02T09:24:36.928-03:00","cssclasses":""}
 ---
 
 
@@ -9,3 +9,8 @@
 - Promedio humana: Entre 20 y 30 um
 - Glóbulo rojo: 6\~8 um
 ![[00_Recursos/Célula.png|400]]
+
+
+
+
+
