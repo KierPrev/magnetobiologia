@@ -1,11 +1,12 @@
 ---
-{"publish":true,"created":"2025-09-02T09:09:09.517-03:00","modified":"2025-08-19T09:18:16.000-03:00","cssclasses":""}
+{"publish":true,"created":"2025-09-02T09:09:09.517-03:00","modified":"2025-09-09T11:37:23.053-03:00","cssclasses":""}
 ---
 
 
 #definición
 - Cuanto más alto SNR, mejor (Más distancia de ruido a señal)  
-- P\_señal / P\_ruido  
+- $SNR = P_{señal} / P_{ruido}$
+- Usualmente se mide en decibeles (dB), de forma logarítmica
 #### Métodos:  
   - Promediar múltiples mediciones  
   - Filtros  
